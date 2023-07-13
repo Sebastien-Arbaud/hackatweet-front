@@ -2,10 +2,13 @@ import styles from '../styles/Home.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../reducers/user';
 
-const dispatch = useDispatch();
-const user = useSelector((state) => state.user.value);
+
+
 
 function Home() {
+
+  const dispatch = useDispatch();
+const user = useSelector((state) => state.user.value);
 
 	const handleLogout = () => {
 		dispatch(logout());
@@ -16,9 +19,9 @@ function Home() {
   return (
     <div>
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <h6 className={styles.title}>
+          <p>Welcome to home</p>
+        </h6>
       </main>
     </div>
   );
