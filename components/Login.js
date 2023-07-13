@@ -6,6 +6,7 @@ import { Modal } from 'antd';
 import Link from 'next/link';
 
 
+
 function Login() {
 
   const dispatch = useDispatch();
@@ -35,6 +36,9 @@ const showModalSignIn = () => {
   setIsModalOpenSignIn(true);
 };
 
+const handleCancelSignIn = () => {
+  setIsModalOpenSignIn(false);
+};
 
 
 const handleSignIn = () => {
@@ -57,9 +61,7 @@ const handleSignIn = () => {
 };
 
 
-const handleCancelSignIn = () => {
-  setIsModalOpenSignIn(false);
-};
+
 
 const handleSignUp = () => {
   fetch('http://localhost:3000/users/signup', {
@@ -75,7 +77,8 @@ const handleSignUp = () => {
           
 					
 				}
-        setIsModalOpenSignIn(false);
+        setIsModalOpenSignUp(false);
+        
 			});
 	};
 
