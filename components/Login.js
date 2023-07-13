@@ -1,9 +1,12 @@
 import styles from '../styles/Login.module.css';
 import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
 import { login } from '../reducers/user';
-import styles from '../styles/Home.module.css';
 
-const dispatch = useDispatch();
+
+function Login() {
+
+  const dispatch = useDispatch();
 const user = useSelector((state) => state.user.value);
 
 const [signUpFirstname, setSignUpFirstname] = useState('') 
@@ -12,7 +15,7 @@ const [signUpPassword, setSignUpPassword] = useState('');
 const [signInUsername, setSignInUsername] = useState('');
 const [signInPassword, setSignInPassword] = useState('');
 
-function Login() {
+
 
   const handleRegister = () => {
 		fetch('http://localhost:3000/users/signup', {
