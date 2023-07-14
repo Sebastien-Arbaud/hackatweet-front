@@ -1,22 +1,22 @@
 import styles from '../styles/Home.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { logout } from '../reducers/user';
+// import { logout } from '../reducers/user';
 
-const dispatch = useDispatch();
-const user = useSelector((state) => state.user.value);
+// const dispatch = useDispatch();
+
 
 function Home() {
 
-const handleLogout = () => {
-    dispatch(logout());
-};
-
+// const handleLogout = () => {
+//     dispatch(logout());
+// };
+const user = useSelector((state) => state.user.value);
   
   return (
     <div>
       <main className={styles.main}>
 
-    <div className={boxLeft}>
+    <div className={styles.boxLeft}>
       <div className={styles.logoTop}><img src='logo.png'></img></div>
       <div className={styles.user}>
         <div>
@@ -28,7 +28,7 @@ const handleLogout = () => {
       </div>
     </div>
 
-    <div className={boxCenter}>
+    <div className={styles.boxCenter}>
         <div>
           <h1 className={styles.title}>Home</h1>      
           <button className={styles.tweet}></button>     
@@ -36,7 +36,7 @@ const handleLogout = () => {
         <div className={styles.tweets}></div>
     </div>
     
-    <div className={boxRight}>
+    <div className={styles.boxRight}>
       <h1 className={styles.trends}></h1>
       <div className={styles.hashtags}>
 
