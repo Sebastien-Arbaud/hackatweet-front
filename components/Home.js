@@ -1,7 +1,7 @@
 import styles from '../styles/Home.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import {faTrashCan} from '@fortawesome/free-regular-svg-icons';
+
 
 // import { logout } from '../reducers/user';
 
