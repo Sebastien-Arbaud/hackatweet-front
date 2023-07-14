@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { useState } from 'react';
 import { addTweet } from '../reducers/tweet';
+import { useRouter } from 'next/router';
 
 // import { logout } from '../reducers/user';
 
@@ -11,9 +12,13 @@ import { addTweet } from '../reducers/tweet';
 
 function Home() {
 
-// const handleLogout = () => {
-//     dispatch(logout());
-// };
+  const router = useRouter();
+
+
+const handleLogout = () => {
+  router.push("/login");
+};
+
 
 const dispatch = useDispatch();
 const user = useSelector((state) => state.user.value);
@@ -56,7 +61,7 @@ const user = useSelector((state) => state.user.value);
           <h5 className={styles.userName}>@SebPhil</h5>
           </div>
           </div>
-          <button className={styles.logout}>Logout</button>
+          <button className={styles.logout} onClick={() => handleLogout()}>Logout</button>
         </div>
       </div>
     </div>
