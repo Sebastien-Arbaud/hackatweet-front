@@ -1,12 +1,12 @@
 import styles from '../styles/Home.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import {faTrashCan} from '@fortawesome/free-regular-svg-icons';
 import { useState } from 'react';
+import { addTweet } from '../reducers/tweet';
 
 // import { logout } from '../reducers/user';
 
-// const dispatch = useDispatch();
+
 
 
 function Home() {
@@ -14,11 +14,32 @@ function Home() {
 // const handleLogout = () => {
 //     dispatch(logout());
 // };
+
+const dispatch = useDispatch();
 const user = useSelector((state) => state.user.value);
 
 
   
   const [count, setCount] = useState (0);
+  const [newTweet, setNewTweet] = useState([]);
+
+  const handleTweet = () => {
+
+		fetch('http://localhost:3000/tweets/newTweet', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ tweet: newTweet}),
+		}).then(response => response.json())
+			.then(data => {
+				if (data.result) {
+					dispatch(addTweet({ tweet: newTweet }));
+					setNewTweet('');
+				}
+			});
+	};
+
+
+
   
   return (
     <div>
@@ -44,11 +65,12 @@ const user = useSelector((state) => state.user.value);
         <div>
           <h1 className={styles.title}>Home</h1>      
           <div className={styles.inputborder}>
-            <input onChange={(e) => setCount(e.target.value.length )} className={styles.inputbar} placeholder='Whats up?'></input>
+            <input onChange={(e) => {setCount(e.target.value.length ), setNewTweet(e.target.value)}} className={styles.inputbar} placeholder='Whats up?'></input>
           </div>
           <div className={styles.tweetBar}>
-            <div className={styles.counter}>{count}/280</div><button className={styles.tweet}>Tweet</button>   
+            <div className={styles.counter}>{count}/280</div><button className={styles.tweet} onClick={() => handleTweet()}>Tweet</button>   
           </div>
+          <div></div>
         </div>
           {/* <FontAwesomeIcon icon={faTrashCan} />   */}
         <div className={styles.tweets}>
