@@ -82,6 +82,7 @@ const handleSignUp = () => {
           
 					
 				}
+        router.push("/home");
         setIsModalOpenSignUp(false);
         
 			});
