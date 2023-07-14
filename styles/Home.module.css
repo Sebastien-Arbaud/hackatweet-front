@@ -1,17 +1,24 @@
 .main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 4rem 0;
-}
+display: flex;
+flex: 1;
+ }
 
 .title {
   line-height: 1.15;
-  font-size: 4rem;
-}
+  font-size: 2rem;
+  color: white;
+  margin-left: 25px;
 
+}
+.tweet{
+  width: 100px;
+    height: 40px;
+    border-radius: 25px;
+    background-color: rgb(87, 163, 255);
+    font-family: 'Mont-Heavy';
+    font-size: 1rem;
+    color: white;
+}
 .title a {
   color: #0070f3;
   text-decoration: none;
@@ -19,4 +26,109 @@
 
 .title a:hover, .title a:focus, .title a:active {
   text-decoration: underline;
+}
+.boxLeft {
+display: flex;
+width: 20%;
+flex-direction: column;
+align-items: flex-start;
+justify-content: space-between;
+background-color: rgb(26, 24, 33);
+height: 100vh;
+border-color: grey;
+border-width: 0.5px;
+border-style: solid;
+}
+
+.logoTop {
+  width: 95px;
+  margin: 25px;
+  transform: rotate(180deg);
+
+}
+
+.boxCenter {
+  background-color:rgb(26, 24, 33);
+  width: 50%;
+  border-color: grey;
+  border-width: 0.5px;
+  border-style: solid;
+}
+
+.boxRight {
+  background-color: rgb(26, 24, 33);
+  width: 30%;
+  border-color: grey;
+  border-width: 0.5px;
+  border-style: solid;
+}
+
+.blueDot {
+width: 55px;
+height: 55px;
+}
+
+.userName {
+  color: grey;
+  padding: 2px;
+  margin: 0;  
+}
+.firstName {
+  color: white;
+  padding: 2px;
+  margin: 0;
+}
+.logout {
+  width: 85px;
+  height: 30px;
+  margin: 25px;
+  font-size: 0.8rem;
+  background-color: transparent;
+  border-radius: 35px;
+  border-style: solid;
+  border-color: grey;
+  border-width: 1px;
+  color: white;
+  font-family: 'Mont-Heavy';
+} 
+
+.bottombox {
+  display: flex;
+  flex-direction: column;
+  align-items: left
+  ;
+  margin: 10px;
+}
+.userbox {
+  display: flex;
+  flex-direction: row;
+  margin-left: 25px;
+  justify-content: space-evenly;
+  padding: 0;
+}
+
+.users {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  padding: 0;
+}
+
+.inputborder {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.inputbar {
+  width: 80%;
+  border: none;
+  border-bottom: 1px solid grey;
+  background-color: transparent;
+  outline: 0;
+}
+
+.tweet {
+  margin-left: 79%;
+  margin-top: 25px;
 }
