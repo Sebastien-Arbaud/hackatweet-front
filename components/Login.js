@@ -4,10 +4,13 @@ import { useState } from 'react';
 import { login } from '../reducers/user';
 import { Modal } from 'antd';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 
 
 function Login() {
+
+  const router = useRouter();
 
   const dispatch = useDispatch();
 
@@ -55,7 +58,9 @@ const handleSignIn = () => {
         setSignInPassword('');
         
       }
+      router.push("/home");
       setIsModalOpenSignIn(false);
+      
    
     });
 };
@@ -110,7 +115,6 @@ const handleSignUp = () => {
                 <h5 className={styles.loginh5}>Already have an account?</h5>
                 <button className={styles.signIn} onClick={()=> showModalSignIn()}>Sign in</button>
                 <Modal  className={styles.modalButton} title="Connect to Hackatweet" open={isModalOpenSignIn} onOk={handleSignIn} onCancel={handleCancelSignIn} okText="Sign in" cancelButtonProps={{style : {display: 'none'}}}>
-                  <Link href = "/home">OK</Link>
                 <input onChange={(e) => setSignInUsername(e.target.value)} value={signInUsername} type="text" placeholder='Username' />
                 <input onChange={(e) => setSignInPassword(e.target.value)} value={signInPassword} type="text" placeholder='Password'/>
     </Modal>
