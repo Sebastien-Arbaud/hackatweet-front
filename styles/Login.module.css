@@ -45,9 +45,10 @@
   }
 
   .logoSmall {
-    width: 200px;
-    padding: 45px;
-    margin: 0px;
+    width: 100px;
+    padding: 0;
+    margin-left: 25px;
+    margin-top: 25px;
     transform: rotate(180deg);
   }
 
@@ -83,6 +84,7 @@
     align-items: left;
     margin-left: 45px;
     width: 500px;
+    background-color: rgb(37, 37, 43);
   
   }
 
