@@ -1,0 +1,26 @@
+.modalStyle {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    background-color: rgb(26, 26, 41);
+}
+
+.signup {
+    width: 250px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: white;
+    font-family: 'Mont-Heavy';
+    font-size: 1rem;
+    color: rgb(26, 26, 41);
+}
+
+.signin {
+    width: 250px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: white;
+    font-family: 'Mont-Heavy';
+    font-size: 1rem;
+    color: rgb(26, 26, 41);
+}
