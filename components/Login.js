@@ -107,17 +107,21 @@ const handleSignUp = () => {
             <h3 className={styles.loginh3}>Join Haackatweet today</h3>
             <div className={styles.buttons}>
                 <button className={styles.signUp} onClick={()=> showModalSignUp()}>Sign up</button>
-                <Modal  className={styles.modalButton} title="Create your Hackatweet account" open={isModalOpenSignUp} onOk={handleSignUp} onCancel={handleCancelSignUp} okText="Sign up" cancelButtonProps={{style : {display: 'none'}}}>
-                <input onChange={(e) => setSignUpFirstname(e.target.value)} value={signUpFirstname} type="text" placeholder='Firstname'/>
-                <input onChange={(e) => setSignUpUsername(e.target.value)} value={signUpUsername} type="text" placeholder='Username'/>
-                <input  onChange={(e) => setSignUpPassword(e.target.value)} value={signUpPassword} type="text" placeholder='Password'/>
-    </Modal>
+                <Modal title="Create your Hackatweet account" open={isModalOpenSignUp} onOk={handleSignUp} onCancel={handleCancelSignUp} okText="Sign up" cancelButtonProps={{style : {display: 'none'}}}>
+                  <div className={styles.modalcontainer}>
+                    <div className={styles.modal}>
+                    <input onChange={(e) => setSignUpFirstname(e.target.value)} value={signUpFirstname} type="text" placeholder='Firstname'/>
+                    <input onChange={(e) => setSignUpUsername(e.target.value)} value={signUpUsername} type="text" placeholder='Username'/>
+                    <input  onChange={(e) => setSignUpPassword(e.target.value)} className={styles.inputs} value={signUpPassword} type="text" placeholder='Password'/>
+                    </div>
+                  </div>
+                </Modal>
                 <h5 className={styles.loginh5}>Already have an account?</h5>
                 <button className={styles.signIn} onClick={()=> showModalSignIn()}>Sign in</button>
                 <Modal  className={styles.modalButton} title="Connect to Hackatweet" open={isModalOpenSignIn} onOk={handleSignIn} onCancel={handleCancelSignIn} okText="Sign in" cancelButtonProps={{style : {display: 'none'}}}>
                 <input onChange={(e) => setSignInUsername(e.target.value)} value={signInUsername} type="text" placeholder='Username' />
                 <input onChange={(e) => setSignInPassword(e.target.value)} value={signInPassword} type="text" placeholder='Password'/>
-    </Modal>
+                </Modal>
             </div>
         </div>
        </main>
