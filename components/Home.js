@@ -16,9 +16,34 @@ function Home() {
   return (
     <div>
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+
+        <div className={boxLeft}>
+          <div className={styles.logoTop}><img src='logo.png'></img></div>
+          <div className={styles.user}>
+            <div>
+              <img></img>
+              <h2>{user.firstName}</h2>
+              <h5>@{user.username}</h5>
+            </div>
+            <button className={styles.logout}></button>
+          </div>
+        </div>
+
+        <div className={boxCenter}>
+            <div>
+              <h1 className={styles.title}>Home</h1>      
+              <button className={styles.tweet}></button>     
+            </div>
+            <div className={styles.tweets}></div>
+        </div>
+        
+        <div className={boxRight}>
+          <h1 className={styles.trends}></h1>
+          <div className={styles.hashtags}>
+
+          </div>
+        </div>
+
       </main>
     </div>
   );
