@@ -1,7 +1,8 @@
 import styles from '../styles/Home.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { library } from '@fortawesome/fontawesome-svg-core';
-
+import {faTrashCan} from '@fortawesome/free-regular-svg-icons';
+import { useState } from 'react';
 
 // import { logout } from '../reducers/user';
 
@@ -14,6 +15,10 @@ function Home() {
 //     dispatch(logout());
 // };
 const user = useSelector((state) => state.user.value);
+
+
+  
+  const [count, setCount] = useState (0);
   
   return (
     <div>
@@ -39,12 +44,16 @@ const user = useSelector((state) => state.user.value);
         <div>
           <h1 className={styles.title}>Home</h1>      
           <div className={styles.inputborder}>
-            <input className={styles.inputbar} placeholder='Whats up?'></input>
+            <input onChange={(e) => setCount(e.target.value.length )} className={styles.inputbar} placeholder='Whats up?'></input>
           </div>
-            <button className={styles.tweet}>Tweet</button>   
+          <div className={styles.tweetBar}>
+            <div className={styles.counter}>{count}/280</div><button className={styles.tweet}>Tweet</button>   
+          </div>
         </div>
           {/* <FontAwesomeIcon icon={faTrashCan} />   */}
-        <div className={styles.tweets}></div>
+        <div className={styles.tweets}>
+
+        </div>
     </div>
     
     <div className={styles.boxRight}>
